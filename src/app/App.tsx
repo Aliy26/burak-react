@@ -14,7 +14,6 @@ import "../css/navbar.css";
 
 function App() {
   const location = useLocation();
-  console.log("location:", location);
 
   return (
     <>
