@@ -1,6 +1,6 @@
 import React from "react";
 import Statistics from "./Statistics";
-import PopularDishes from "./PopularDishes copy";
+import PopularDishes from "./PopularDishes";
 import NewDishes from "./NewDishes";
 import Adverstisement from "./Advertisement";
 import ActiveUsers from "./ActiveUsers";
