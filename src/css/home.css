@@ -291,12 +291,13 @@
   height: 335px;
   width: 300px;
   cursor: pointer;
+  border: none;
 }
 
 .homepage .cards-frame .member-nickname {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 .homepage .cards-frame .no-data {
