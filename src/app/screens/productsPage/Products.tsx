@@ -113,10 +113,14 @@ export default function Product() {
                             <img src={"/icons/shopping-cart.svg"} />
                           </Button>
                           <Button className={"view-btn"}>
-                            <Badge badgeContent={20} color="secondary">
+                            <Badge
+                              badgeContent={20}
+                              color="secondary"
+                              className="badge"
+                            >
                               <RemoveRedIcon
                                 sx={{
-                                  color: 20 ? "gray" : "white",
+                                  color: "white",
                                 }}
                               />
                             </Badge>
