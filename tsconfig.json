@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/app/screens/homePage/.tsx"]
+  "include": ["src", "src/app/screens/homePage/.tsx", "src/lib/data"]
 }
