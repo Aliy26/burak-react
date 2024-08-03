@@ -1,6 +1,7 @@
 import axios from "axios";
 import { serverApi } from "../../lib/config";
 import { Product, ProductInquiry } from "../../lib/types/products";
+import { ProductCollection } from "../../lib/enums/product.enum";
 
 class ProductService {
   private readonly path: string;
@@ -13,11 +14,11 @@ class ProductService {
     try {
       let url = `${this.path}/product/all?order=${input.order}&page=${input.page}&limit=${input.limit}`;
       if (input.productCollection)
-        url += `&input.productCollection=${input.productCollection}`;
+        url += `&productCollection=${input.productCollection}`;
       if (input.search) url += `&search=${input.search}`;
 
       const result = await axios.get(url);
-
+      console.log("heeeeey>>>", input.productCollection);
       return result.data;
     } catch (err) {
       console.log("Error, getProduct", err);
