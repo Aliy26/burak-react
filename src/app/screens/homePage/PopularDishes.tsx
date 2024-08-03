@@ -79,6 +79,8 @@ export default function PopularDishes() {
                           px: "var(--Card-padding)",
                           borderTop: "1px solid",
                           height: "60px",
+                          overflow: "hidden",
+                          boxSizing: "border-box",
                         }}
                       >
                         <Typography

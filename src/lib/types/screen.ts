@@ -15,6 +15,10 @@ export interface HomePageState {
 }
 
 //** PRODUCTS **/
-export interface ProductsPageState {}
+export interface ProductsPageState {
+  restaurant: Member | null;
+  chosenProduct: Product | null;
+  products: Product[];
+}
 
 //** ORDERS PAGE **/
