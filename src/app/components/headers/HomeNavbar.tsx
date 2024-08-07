@@ -15,7 +15,7 @@ interface HomeNavbarProps {
 export default function HomeNavbar(props: HomeNavbarProps) {
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
 
-  const authMember = true;
+  const authMember = false;
 
   const [count, setCount] = useState<number>(0);
   const [value, setvalue] = useState<boolean>(true);
