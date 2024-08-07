@@ -98,7 +98,6 @@ export default function ChosenProduct(props: ChosenProductProps) {
             <span className={"resto-name"}>
               Contact us at: {restaurant?.memberPhone}
             </span>
-            <span className={"resto-name"}>{restaurant?.memberNick}</span>
             <Box className={"rating-box"}>
               <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
               <div className={"evaluation-box"}>
@@ -116,10 +115,25 @@ export default function ChosenProduct(props: ChosenProductProps) {
             <Divider height="1" width="100%" bg="#000000" />
             <div className={"product-price"}>
               <span>Price:</span>
-              <span>{chosenProduct?.productPrice}</span>
+              <span>${chosenProduct?.productPrice}</span>
             </div>
             <div className={"button-box"}>
-              <Button variant="contained">Add To Basket</Button>
+              <Button
+                className="add-to-basket"
+                variant="contained"
+                onClick={(e) => {
+                  onAdd({
+                    _id: chosenProduct._id,
+                    quantity: 1,
+                    name: chosenProduct.productName,
+                    price: chosenProduct.productPrice,
+                    image: chosenProduct.productImages[0],
+                  });
+                  e.stopPropagation();
+                }}
+              >
+                Add To Basket
+              </Button>
             </div>
           </Box>
         </Stack>
