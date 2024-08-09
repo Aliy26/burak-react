@@ -15,6 +15,9 @@ import { OrderStatus } from "../../../lib/enums/order.enum";
 import OrderService from "../../services/OrderService";
 import { useGlobals } from "../../hooks/useGlobals";
 import "../../../css/order.css";
+import { useHistory } from "react-router-dom";
+import { serverApi } from "../../../lib/config";
+import { MemberType } from "../../../lib/enums/member.enum";
 
 /** REDUX SLICE & SELECTOR */
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -26,7 +29,8 @@ const actionDispatch = (dispatch: Dispatch) => ({
 export default function OrdersPage() {
   const { setPausedOrders, setProcessOrders, setFinishedOrders } =
     actionDispatch(useDispatch());
-  const { orderBuilder } = useGlobals();
+  const { authMember, orderBuilder } = useGlobals();
+  const history = useHistory();
   const [value, setValue] = useState("1");
   const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
     page: 1,
@@ -59,6 +63,7 @@ export default function OrdersPage() {
     setValue(newValue);
   };
 
+  if (!authMember) history.push("/");
   return (
     <div className={"order-page"}>
       <Container className="order-container">
@@ -91,18 +96,34 @@ export default function OrdersPage() {
             <Box className={"member-box"}>
               <div className={"order-user-img"}>
                 <img
-                  src={"/icons/default-user.svg"}
+                  src={
+                    authMember?.memberImage
+                      ? `${serverApi}/${authMember.memberImage}`
+                      : "/icons/default-user.svg"
+                  }
                   className={"order-user-avatar"}
                 />
                 <div className={"order-user-icon-box"}>
-                  <img src="/icons/user-badge.svg" />
+                  <img
+                    src={
+                      authMember?.memberType === MemberType.RESTAURANT
+                        ? "/icons/restaurant.svg"
+                        : "icons/user-badge.svg"
+                    }
+                  />
                 </div>
-                <p className={"user-name"}>Justin</p>
-                <p className={"user"}>User</p>
+                <p className={"user-name"}>
+                  {authMember?.memberNick ? authMember.memberNick : "No name"}
+                </p>
+                <p className={"user"}>{authMember?.memberType}</p>
                 <div className="border-line"></div>
                 <div className="location">
                   <img src={"/icons/location.svg"} />
-                  <p>South Korea, Seoul</p>
+                  <p>
+                    {authMember?.memberAddress
+                      ? authMember.memberAddress
+                      : "No address"}
+                  </p>
                 </div>
               </div>
             </Box>
