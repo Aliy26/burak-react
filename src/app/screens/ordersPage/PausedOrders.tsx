@@ -21,7 +21,7 @@ export default function PausedOrders() {
   return (
     <TabPanel value={"1"}>
       <Stack>
-        {pausedOrders.map((order: Order) => {
+        {pausedOrders?.map((order: Order) => {
           return (
             <Box key={order._id} className={"order-main-box"}>
               <Box className={"order-box-scroll"}>
@@ -53,16 +53,16 @@ export default function PausedOrders() {
               <Box className={"total-price-box"}>
                 <Box className={"box-total"}>
                   <p>Product price</p>
-                  <p>{order.orderTotal - order.orderDelivery}</p>
+                  <p>${order.orderTotal - order.orderDelivery}</p>
                   <img src={"/icons/plus.svg"} style={{ marginLeft: "20px" }} />
                   <p>Delivery cost</p>
-                  <p>{order.orderDelivery}</p>
+                  <p>${order.orderDelivery}</p>
                   <img
                     src={"/icons/pause.svg"}
                     style={{ marginLeft: "20px" }}
                   />
                   <p>Total</p>
-                  <p>{order.orderTotal}</p>
+                  <p>${order.orderTotal}</p>
                 </Box>
                 <Button
                   variant="contained"
