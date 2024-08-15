@@ -31,6 +31,7 @@
 .order-page .order-main-box {
   margin-top: 20px;
   width: 821px;
+  min-height: 200px;
   border-radius: 16px;
   background: #fef8fc;
   box-shadow: -12px 12px 4px 0px #bababf, 0px 4px 10px 9px #d3d3e7 inset,
@@ -40,7 +41,7 @@
 
 .order-page .order-main-box .order-box-scroll {
   margin-top: 20px;
-  height: 210px;
+  height: 150px;
   width: 821px;
   overflow: auto;
 }
