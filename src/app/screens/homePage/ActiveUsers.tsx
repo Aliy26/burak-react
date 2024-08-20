@@ -34,7 +34,7 @@ export default function ActiveUsers() {
                     >
                       <CardOverflow>
                         <AspectRatio ratio={"1"}>
-                          <img src={imagePath} alt="" />
+                          <img src={imagePath} alt="ative-user" />
                         </AspectRatio>
                         <Typography className="member-nickname">
                           {member.memberNick}

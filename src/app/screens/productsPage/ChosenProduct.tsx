@@ -83,7 +83,11 @@ export default function ChosenProduct(props: ChosenProductProps) {
               const imagePath = `${serverApi}/${ele}`;
               return (
                 <SwiperSlide key={index}>
-                  <img className="slider-image" src={imagePath} />
+                  <img
+                    className="slider-image"
+                    src={imagePath}
+                    alt="slider-image"
+                  />
                 </SwiperSlide>
               );
             })}

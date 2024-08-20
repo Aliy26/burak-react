@@ -93,14 +93,18 @@ export default function PausedOrders(props: PausedOrdersProps) {
                   return (
                     <Box key={item._id} className={"orders-name-price"}>
                       <Box className={"dish-info"}>
-                        <img src={imagePath} className={"order-dish-img"} />
+                        <img
+                          src={imagePath}
+                          className={"order-dish-img"}
+                          alt="order-name"
+                        />
                         <p className={"title-dish"}>{product.productName}</p>
                       </Box>
                       <Box className={"price-box"}>
                         <p>{item.itemPrice}</p>
-                        <img src={"/icons/close.svg"} />
+                        <img src={"/icons/close.svg"} alt="icons-close" />
                         <p>{item.itemQuantity}</p>
-                        <img src="/icons/pause.svg" />
+                        <img src="/icons/pause.svg" alt="icons-pause" />
                         <p style={{ marginLeft: "15px" }}>
                           {item.itemQuantity * item.itemPrice}
                         </p>
@@ -114,12 +118,17 @@ export default function PausedOrders(props: PausedOrdersProps) {
                 <Box className={"box-total"}>
                   <p>Product price</p>
                   <p>${order.orderTotal - order.orderDelivery}</p>
-                  <img src={"/icons/plus.svg"} style={{ marginLeft: "20px" }} />
+                  <img
+                    src={"/icons/plus.svg"}
+                    style={{ marginLeft: "20px" }}
+                    alt="icons-plus"
+                  />
                   <p>Delivery cost</p>
                   <p>${order.orderDelivery}</p>
                   <img
                     src={"/icons/pause.svg"}
                     style={{ marginLeft: "20px" }}
+                    alt="icons-pause"
                   />
                   <p>Total</p>
                   <p>${order.orderTotal}</p>
@@ -156,6 +165,7 @@ export default function PausedOrders(props: PausedOrdersProps) {
               <img
                 src="/icons/noimage-list.svg"
                 style={{ width: 300, height: 300 }}
+                alt="icons-noimage"
               />
             </Box>
           ))}

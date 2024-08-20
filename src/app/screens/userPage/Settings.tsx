@@ -74,23 +74,27 @@ export function Settings() {
   };
 
   const handleImageViewer = (e: T) => {
-    const file = e.target.files[0];
-    const fileType = file.type,
-      validateImageTypes = ["image/png", "image/jpeg", "image/jpg"];
+    if (e.target && e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      const fileType = file.type,
+        validateImageTypes = ["image/png", "image/jpeg", "image/jpg"];
 
-    if (!validateImageTypes.includes(fileType)) {
-      sweetErrorHandling(Messages.error5).then();
-    } else if (file) {
-      memberUpdateInput.memberImage = file;
-      setMemberUpdateInput({ ...memberUpdateInput });
-      setMemberImage(URL.createObjectURL(file));
+      if (!validateImageTypes.includes(fileType)) {
+        sweetErrorHandling({ message: Messages.error5 }).then();
+      } else if (file) {
+        memberUpdateInput.memberImage = file;
+        setMemberUpdateInput({ ...memberUpdateInput });
+        setMemberImage(URL.createObjectURL(file));
+      } else {
+        console.error("No file selected or the event target is invalid");
+      }
     }
   };
 
   return (
     <Box className={"settings"}>
       <Box className={"member-media-frame"}>
-        <img src={memberImage} className={"mb-image"} />
+        <img src={memberImage} className={"mb-image"} alt={"member-image"} />
         <div className={"media-change-box"}>
           <span>Upload image</span>
           <p>JPG, JPEG, PNG formats only!</p>

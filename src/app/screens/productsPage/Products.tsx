@@ -256,7 +256,10 @@ export default function Products(props: ProductsProps) {
                               e.stopPropagation();
                             }}
                           >
-                            <img src={"/icons/shopping-cart.svg"} />
+                            <img
+                              src={"/icons/shopping-cart.svg"}
+                              alt="shopping-cart"
+                            />
                           </Button>
                           <Button className={"view-btn"}>
                             <Badge
@@ -321,10 +324,26 @@ export default function Products(props: ProductsProps) {
           <Stack className="brand-list">
             <Box className={"category-title"}>Our Family Brands</Box>
             <Box className={"review-box"}>
-              <img className="rest-logo" src={"/img/gurme.webp"} alt="" />
-              <img className="rest-logo" src={"/img/seafood.webp"} alt="" />
-              <img className="rest-logo" src={"/img/sweets.webp"} alt="" />
-              <img className="rest-logo" src={"/img/doner.webp"} alt="" />
+              <img
+                className="rest-logo"
+                src={"/img/gurme.webp"}
+                alt="rest-logo"
+              />
+              <img
+                className="rest-logo"
+                src={"/img/seafood.webp"}
+                alt="rest-logo"
+              />
+              <img
+                className="rest-logo"
+                src={"/img/sweets.webp"}
+                alt="rest-logo"
+              />
+              <img
+                className="rest-logo"
+                src={"/img/doner.webp"}
+                alt="rest-logo"
+              />
             </Box>
           </Stack>
         </Container>

@@ -7,13 +7,12 @@ import Typography from "@mui/joy/Typography";
 import { CssVarsProvider } from "@mui/joy/styles";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Divider from "../../components/divider";
-
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { retrieveNewDishes, retrievePopularDishes } from "./selector";
-import { Product } from "../../../lib/types/product";
+import { retrieveNewDishes } from "./selector";
 import { serverApi } from "../../../lib/config";
 import { ProductCollection } from "../../../lib/enums/product.enum";
+import { useHistory } from "react-router-dom";
 
 /** REDUX SLICE & SELECTOR */
 
@@ -23,7 +22,10 @@ const newDishesRetriever = createSelector(retrieveNewDishes, (newDishes) => ({
 
 export default function NewDishes() {
   const { newDishes } = useSelector(newDishesRetriever);
-
+  const history = useHistory();
+  const chosenDishHandler = (id: string) => {
+    history.push(`/products/${id}`);
+  };
   return (
     <div className="new-products-frame">
       <Container>
@@ -43,11 +45,12 @@ export default function NewDishes() {
                       key={product._id}
                       variant="outlined"
                       className={"card"}
+                      onClick={() => chosenDishHandler(product._id)}
                     >
                       <CardOverflow>
                         <div className="product-sale">{sizeVolume}</div>
                         <AspectRatio ratio="1">
-                          <img src={imagePath} alt="" />
+                          <img src={imagePath} alt="user-iamge" />
                         </AspectRatio>
                       </CardOverflow>
 

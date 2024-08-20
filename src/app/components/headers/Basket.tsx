@@ -71,7 +71,7 @@ export default function Basket(props: BasketProps) {
         onClick={handleClick}
       >
         <Badge badgeContent={cartItems.length} color="secondary">
-          <img src={"/icons/shopping-cart.svg"} />
+          <img src={"/icons/shopping-cart.svg"} alt="shopping-icon" />
         </Badge>
       </IconButton>
       <Menu
@@ -137,7 +137,11 @@ export default function Basket(props: BasketProps) {
                         onClick={() => onDelete(item)}
                       />
                     </div>
-                    <img src={imagePath} className={"product-img"} />
+                    <img
+                      src={imagePath}
+                      className={"product-img"}
+                      alt="product-image"
+                    />
                     <span className={"product-name"}>{item.name}</span>
                     <p className={"product-price"}>
                       {item.price} x {item.quantity}

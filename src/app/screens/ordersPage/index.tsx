@@ -3,7 +3,6 @@ import { Container, Stack, Box } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PausedOrders from "./PausedOrders";
 import ProcessOrders from "./ProcessOrders";
 import FinishedOrders from "./FinishedOrders";
@@ -102,6 +101,7 @@ export default function OrdersPage() {
                       : "/icons/default-user.svg"
                   }
                   className={"order-user-avatar"}
+                  alt="order-user-avatar"
                 />
                 <div className={"order-user-icon-box"}>
                   <img
@@ -110,6 +110,7 @@ export default function OrdersPage() {
                         ? "/icons/restaurant.svg"
                         : "icons/user-badge.svg"
                     }
+                    alt="order-item-avatar"
                   />
                 </div>
                 <p className={"user-name"}>
@@ -118,7 +119,7 @@ export default function OrdersPage() {
                 <p className={"user"}>{authMember?.memberType}</p>
                 <div className="border-line"></div>
                 <div className="location">
-                  <img src={"/icons/location.svg"} />
+                  <img src={"/icons/location.svg"} alt="location-icon" />
                   <p>
                     {authMember?.memberAddress
                       ? authMember.memberAddress
@@ -145,10 +146,10 @@ export default function OrdersPage() {
               placeholder="Justin Robertson"
             />
             <Box className="images">
-              <img src="/icons/western-card.svg" alt="" />
-              <img src="/icons/master-card.svg" alt="" />
-              <img src="/icons/paypal-card.svg" alt="" />
-              <img src="/icons/visa-card.svg" alt="" />
+              <img src="/icons/western-card.svg" alt="western-card" />
+              <img src="/icons/master-card.svg" alt="master-card" />
+              <img src="/icons/paypal-card.svg" alt="paypal" />
+              <img src="/icons/visa-card.svg" alt="visa-card" />
             </Box>
           </Stack>
         </Stack>

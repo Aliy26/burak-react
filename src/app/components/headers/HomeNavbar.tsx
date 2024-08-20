@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Container,
   Stack,
@@ -53,7 +53,11 @@ export default function HomeNavbar(props: HomeNavbarProps) {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" alt="" />
+              <img
+                className="brand-logo"
+                src="/icons/burak.svg"
+                alt="brand-logo"
+              />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -113,6 +117,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
                 }
                 aria-haspopup={"true"}
                 onClick={handleLougoutClick}
+                alt="user-avatar"
               />
             )}
             /*

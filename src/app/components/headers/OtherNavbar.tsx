@@ -49,7 +49,11 @@ export default function OtherNavbar(props: OtherNavbarProps) {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/burak.svg" alt="" />
+              <img
+                className="brand-logo"
+                src="/icons/burak.svg"
+                alt="brand-logo"
+              />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -109,6 +113,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
                 }
                 aria-haspopup={"true"}
                 onClick={handleLougoutClick}
+                alt="user-avatar"
               />
             )}
 
